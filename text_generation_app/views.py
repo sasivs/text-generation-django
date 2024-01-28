@@ -9,7 +9,7 @@ def generate_text(request):
         if form.is_valid():
             input_text = form.cleaned_data['input_text']
             max_length = form.cleaned_data['max_length']
-            model = "/content/text-generation-django/models/Llama-2-7b-indian_lawyer_chat-finetune"
+            model = "/content/Llama-2-7b-indian_lawyer_chat-finetune"
             tokenizer = AutoTokenizer.from_pretrained(model)
             generator = pipeline("text-generation", model=model, torch_dtype=torch.float16, device_map="auto")
             res = generator(f'[INST] {input_text} [/INST]', max_length=max_length, num_return_sequences=1, do_sample=True, top_k=10,eos_token_id=tokenizer.eos_token_id,)
