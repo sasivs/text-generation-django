@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-okjgg%=+tic_51ie9&etza1%qyur^(^3j9sroce11a&gl&!1dj
 DEBUG = True
 
 ALLOWED_HOSTS = ['colab.research.google.com', '*']
+CSRF_TRUSTED_ORIGINS = ['https://colab.research.google.com', '*']
 
 
 # Application definition
