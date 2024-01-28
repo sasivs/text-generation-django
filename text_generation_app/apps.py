@@ -8,4 +8,4 @@ class TextGenerationAppConfig(AppConfig):
     name = 'text_generation_app'
     model = "Mukesh555/Llama-2-7b-indian_lawyer_chat-finetune"
     tokenizer = AutoTokenizer.from_pretrained(model)
-    generator = pipeline("text-generation", model=model, torch_dtype=torch.float16, device_map="auto")
+    generator = pipeline("text-generation", model=model, torch_dtype=torch.float16, device_map="auto", offload_folder="offload")
