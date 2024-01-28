@@ -2,7 +2,9 @@ from django.shortcuts import render
 from transformers import pipeline, AutoTokenizer
 from .forms import TextGenerationForm  # Import the form from the forms.py file of your app
 import torch
+from django.views.decorators.csrf import csrf_exempt
 
+@csrf_exempt 
 def generate_text(request):
     if request.method == 'POST':
         form = TextGenerationForm(request.POST)
