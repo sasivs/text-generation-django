@@ -12,9 +12,11 @@ def generate_text(request):
         if form.is_valid():
             input_text = form.cleaned_data['input_text']
             max_length = form.cleaned_data['max_length']
-            tokenizer = TextGenerationAppConfig.tokenizer
-            generator = TextGenerationAppConfig.generator
-            # model = "Mukesh555/Llama-2-7b-indian_lawyer_chat-finetune"
+            # tokenizer = TextGenerationAppConfig.tokenizer
+            # generator = TextGenerationAppConfig.generator
+            model = "Mukesh555/Llama-2-7b-indian_lawyer_chat-finetune"
+            tokenizer = AutoTokenizer.from_pretrained(model)
+            generator = pipeline("text-generation", model=model, torch_dtype=torch.float16, device_map="auto")
             # if not request.session.get('tokenizer'):
             #     tokenizer = AutoTokenizer.from_pretrained(model)
             #     request.session['tokenizer'] = tokenizer
