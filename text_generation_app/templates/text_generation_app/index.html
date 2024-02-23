@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Classic Login Form Example</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Assistant:400,700"
+      rel="stylesheet"
+    />
+    <link href="{% static 'text_generation_app/style.css' %}" rel="stylesheet">
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <section class="login" id="login">
+      <div class="head">
+        <h1 class="company">👨🏻‍⚖️Generate your doc at ease ⚖️</h1>
+      </div>
+      <p class="msg">Welcome back</p>
+      <div class="form">
+        <form method="post">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <br />
+        </form>
+          <textarea
+            placeholder="Output Text"
+            class="text"
+            id="output-text"
+            readonly
+          >{{output_text}}</textarea
+          ><br />
+          <!-- <a href="#" class="btn-login" id="do-login" style="margin-top: 10px" -->
+          <!-- >Login</a -->
+
+      </div>
+    </section>
+    <footer>
+      <p>Done by team 11a <span class="heart">&hearts;</span></p>
+    </footer>
+    <!-- partial -->
+    <!-- <script src="./script.js"></script> -->
+  </body>
+</html>

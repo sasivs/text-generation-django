@@ -31,7 +31,8 @@ def generate_text(request):
                 'form': form,
                 'output_text': res[0]['generated_text'],
             }
-            return render(request, 'text_generation_app/generate_text.html', context)
+            # return render(request, 'text_generation_app/generate_text.html', context)
+            return render(request, 'text_generation_app/index.html', context)
     else:
         form = TextGenerationForm()
 
@@ -39,4 +40,5 @@ def generate_text(request):
         'form': form,
         'output_text': None,
     }
-    return render(request, 'text_generation_app/generate_text.html', context)
+    # return render(request, 'text_generation_app/generate_text.html', context)
+    return render(request, 'text_generation_app/index.html', context)
