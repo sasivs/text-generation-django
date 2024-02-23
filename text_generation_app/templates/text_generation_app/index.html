@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -20,6 +21,7 @@
         <form method="post">
           {% csrf_token %}
           {{ form.as_p }}
+          <button class="btn waves-effect waves-light" type="submit">Generate Text</button>
           <br />
         </form>
           <textarea
