@@ -38,7 +38,7 @@ def generate_text(request):
 
     context = {
         'form': form,
-        'output_text': None,
+        'output_text': '',
     }
     # return render(request, 'text_generation_app/generate_text.html', context)
     return render(request, 'text_generation_app/index.html', context)
