@@ -21,13 +21,14 @@
         <form method="post">
           {% csrf_token %}
           {{ form.as_p }}
-          <button class="btn waves-effect waves-light" type="submit">Generate Text</button>
+          <button class="btn btn-login" type="submit">Generate Text</button>
           <br />
         </form>
           <textarea
             placeholder="Output Text"
             class="text"
             id="output-text"
+            oninput='this.style.height = "";this.style.height = this.scrollHeight + "px"'
             readonly
           >{{output_text}}</textarea
           ><br />
